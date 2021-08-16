@@ -1,8 +1,16 @@
 {
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django",
-        "--django-settings-module=<folder name>.settings",
-    ],
-    
+  "python.linting.enabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=rare.settings"
+  ],
+  "python.linting.pylintEnabled": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "server-api",
+      "database": "db.sqlite3"
+    }
+  ]
 }
