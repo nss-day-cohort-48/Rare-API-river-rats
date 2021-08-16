@@ -56,7 +56,7 @@ def register_user(request):
         last_name=req_body['last_name']
     )
 
-    # Now save the extra info in the levelupapi_rare table
+    # Now save the extra info in the rareapi_rare table
     rare_user = RareUser.objects.create(
         bio=req_body['bio'],
         user=new_user
