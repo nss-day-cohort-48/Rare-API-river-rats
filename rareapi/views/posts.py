@@ -7,6 +7,9 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rareapi.models import Post
+from rareapi.models import Category
+from rareapi.models import RareUser
+
 
 
 class PostUserSerializer(serializers.ModelSerializer):
