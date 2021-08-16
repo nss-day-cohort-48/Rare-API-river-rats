@@ -1,82 +1,13 @@
 [
     {
-        "model": "auth.user",
+        "model": "rareapi.rare_users",
         "pk": 1,
         "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "bio": "Head guy",
+            "user": 1,
+            "bio": "Me",
             "profile_image_url": "profile_image_url",
-            "username": "me@me.com",
-            "first_name": "Steve",
-            "last_name": "Brownlee",
-            "email": "me@me.com",
-            "is_active": true,
-            "is_admin": true,
-            "created_on": "2020-08-28T14:51:39.989Z"
-        }
-    },
-    {
-        "model": "auth.user",
-        "pk": 2,
-        "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "bio": "New guy",
-            "profile_image_url": "profile_image_url",
-            "username": "Nick M",
-            "first_name": "Nick",
-            "last_name": "M",
-            "email": "nick@m.com",
-            "is_active": true,
-            "is_admin": true,
-            "created_on": "2020-08-28T14:51:39.989Z"
-        }
-    },
-    {
-        "model": "auth.user",
-        "pk": 3,
-        "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "bio": "Smooth guy",
-            "profile_image_url": "profile_image_url",
-            "username": "Ben K",
-            "first_name": "Ben",
-            "last_name": "K",
-            "email": "nick@me.com",
-            "is_active": true,
-            "is_admin": true,
-            "created_on": "2020-08-28T14:51:39.989Z"
-        }
-    },
-    {
-        "model": "auth.user",
-        "pk": 4,
-        "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "bio": "Cool guy",
-            "profile_image_url": "profile_image_url",
-            "username": "Roger G",
-            "first_name": "Roger",
-            "last_name": "G",
-            "email": "roger@g.com",
-            "is_active": true,
-            "is_admin": true,
-            "created_on": "2020-08-28T14:51:39.989Z"
-        }
-    },
-    {
-        "model": "auth.user",
-        "pk": 5,
-        "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "bio": "Young dude",
-            "profile_image_url": "profile_image_url",
-            "username": "Key N",
-            "first_name": "Key",
-            "last_name": "N",
-            "email": "key@n.com",
-            "is_active": true,
-            "is_admin": true,
-            "created_on": "2020-08-28T14:51:39.989Z"
+            "created_on": "2020-08-28T14:51:39.989Z",
+            "is_active": true
         }
     }
 ]
