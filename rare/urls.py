@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from levelupapi.views import register_user, login_user,
+from rareapi.views import register_user, login_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
