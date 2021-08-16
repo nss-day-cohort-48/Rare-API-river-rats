@@ -9,9 +9,21 @@ from rest_framework import serializers
 from rareapi.models import Post
 
 
+class PostUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+
+
+class PostCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['label']
+
+
 class PostSerializer(serializers.ModelSerializer):
     rare_user = PostUserSerializer(many=False)
-    category_id = CategorySerializer(many=True)
+    category_id = PostCategorySerializer(many=True)
 
     class Meta:
         model = Post
@@ -40,3 +52,72 @@ class PostView(ViewSet):
             return Response(serializer.data)
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+    def retrieve(self, request, pk=None):
+        """Handle GET requests for single post"""
+
+        try:
+            post = Post.objects.get(pk=pk)
+            serializer = PostSerializer(post, context={'request': request})
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+    def update(self, request, pk=None):
+        """Handle PUT requests for a post
+
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+        rare_user = Rare_User.objects.get(user=request.auth.user)
+
+        post = Post()
+        post.category_id = Category.objects.get(pk=request.data["category"])
+        post.title = request.data["title"]
+        post.publication_date = request.data["publication_date"]
+        post.image_url = request.data["image_url"]
+        post.content = request.data["content"]
+        post.approved = request.data["approved"]
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests for a single post
+
+        Returns:
+            Response -- 200, 404, or 500 status code
+        """
+        try:
+            post = Post.objects.get(pk=pk)
+            post.delete()
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except Post.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def list(self, request):
+        """Handle GET requests to events resource
+
+        Returns:
+            Response -- JSON serialized list of events
+        """
+        # Get the current authenticated user
+        rare_user = Rare_User.objects.get(user=request.auth.user)
+        posts = Post.objects.all()
+
+        for post in posts:
+
+            post.joined = category_id in post.category_id.all()
+
+        # Support filtering posts by category
+        category = self.request.query_params.get('category_id', None)
+        if category is not None:
+            posts = posts.filter(category=type)
+
+        serializer = PostSerializer(
+            posts, many=True, context={'request': request})
+        return Response(serializer.data)
