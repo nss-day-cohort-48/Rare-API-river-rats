@@ -14,14 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from rest_framework import routers
-from django.urls import path
 from django.conf.urls import include
+from django.urls import path
+from rest_framework import routers
+from rareapi.views import register_user, login_user
 from rareapi.views import (
     PostView,
     CategoryView,
     TagView,
 )
+
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostView, 'post')
@@ -30,4 +32,15 @@ router.register(r'tags', TagView, 'tag')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', include(router.urls)),
+    # path('admin/', admin.site.urls),
+
+    # # Requests to http://localhost:8000/register will be routed to the register_user function
+    path('register', register_user),
+
+    # Requests to http://localhost:8000/login will be routed to the login_user function
+    path('login', login_user),
+
+    path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
 ]
