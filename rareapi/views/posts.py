@@ -9,10 +9,6 @@ from rest_framework import serializers
 from rareapi.models import Post
 from rareapi.models import Category
 from rareapi.models import RareUser
-<<<<<<< HEAD
-=======
-
->>>>>>> a90bd49e62228564aad29e719a53f26d89aeaf08
 
 
 class PostUserSerializer(serializers.ModelSerializer):

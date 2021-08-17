@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User#pylint:disable=(imported-auth-user)
+from django.contrib.auth.models import User  # pylint:disable=(imported-auth-user)
 
 
 class RareUser(models.Model):
