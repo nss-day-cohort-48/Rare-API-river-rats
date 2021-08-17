@@ -10,3 +10,5 @@ class RareUser(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=50)
+    profile_image_url = models.CharField(max_length=50)
+    created_on = models.DateField()
