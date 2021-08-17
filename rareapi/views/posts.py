@@ -7,6 +7,9 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rareapi.models import Post
+from rareapi.models import Category
+from rareapi.models import RareUser
+
 
 
 class PostUserSerializer(serializers.ModelSerializer):
@@ -36,7 +39,7 @@ class PostView(ViewSet):
     def create(self, request):
         """Handle POST operations for posts"""
 
-        rare_user = Rare_User.objects.get(user=request.auth.user)
+        rare_user = RareUser.objects.get(user=request.auth.user)
 
         post = Post()
         post.category_id = Category.objects.get(pk=request.data["category"])
@@ -69,7 +72,7 @@ class PostView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        rare_user = Rare_User.objects.get(user=request.auth.user)
+        rare_user = RareUser.objects.get(user=request.auth.user)
 
         post = Post()
         post.category_id = Category.objects.get(pk=request.data["category"])
@@ -106,7 +109,7 @@ class PostView(ViewSet):
             Response -- JSON serialized list of events
         """
         # Get the current authenticated user
-        rare_user = Rare_User.objects.get(user=request.auth.user)
+        rare_user = RareUser.objects.get(user=request.auth.user)
         posts = Post.objects.all()
 
         for post in posts:
