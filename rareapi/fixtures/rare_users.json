@@ -4,10 +4,7 @@
     "pk": 1,
     "fields": {
       "user": 1,
-      "bio": "Me",
-      "profile_image_url": "profile_image_url",
-      "created_on": "2020-08-28",
-      "is_active": true
+      "bio": "Me"
     }
   }
 ]
