@@ -3,10 +3,10 @@
     "model": "rareapi.post",
     "pk": 1,
     "fields": {
-      "user_id": 1,
+      "rare_user": 1,
       "category_id": 1,
       "title": "This is a test post",
-      "publication_date": "2021-16-08",
+      "publication_date": "2020-08-28",
       "image_url": "fakeurl",
       "content": "Content for this test post #1: content, content, content.",
       "approved": true
@@ -16,10 +16,10 @@
     "model": "rareapi.post",
     "pk": 2,
     "fields": {
-      "user_id": 2,
+      "rare_user": 1,
       "category_id": 2,
       "title": "This is a test post",
-      "publication_date": "2021-16-08",
+      "publication_date": "2020-08-28",
       "image_url": "fakeurl",
       "content": "Content for this test post #2: content, content, content.",
       "approved": true
@@ -29,10 +29,10 @@
     "model": "rareapi.post",
     "pk": 3,
     "fields": {
-      "user_id": 3,
+      "rare_user": 1,
       "category_id": 3,
       "title": "This is a test post",
-      "publication_date": "2021-16-08",
+      "publication_date": "2020-08-28",
       "image_url": "fakeurl",
       "content": "Content for this test post #3: content, content, content.",
       "approved": false

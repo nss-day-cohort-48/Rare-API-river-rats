@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "post": 1,
-            "author": 2,
+            "author": 1,
             "content": "level u papi",
             "created_on": "2021-08-16"
         }
