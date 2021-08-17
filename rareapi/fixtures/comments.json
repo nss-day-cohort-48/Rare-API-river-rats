@@ -5,47 +5,7 @@
         "fields": {
             "post": 1,
             "author": 2,
-            "content": "I knew kittens were evil.",
-            "created_on": "2021-08-16"
-        }
-    },
-    {
-        "model": "rareapi.comment",
-        "pk": 2,
-        "fields": {
-            "post": 1,
-            "author": 2,
-            "content": "level u papi'.",
-            "created_on": "2021-08-16"
-        }
-    },
-    {
-        "model": "rareapi.comment",
-        "pk": 3,
-        "fields": {
-            "post": 2,
-            "author": 2,
-            "content": "yeet",
-            "created_on": "2021-08-16"
-        }
-    },
-    {
-        "model": "rareapi.comment",
-        "pk": 4,
-        "fields": {
-            "post": 3,
-            "author": 1,
-            "content": "I love it",
-            "created_on": "2021-08-16"
-        }
-    },
-    {
-        "model": "rareapi.comment",
-        "pk": 5,
-        "fields": {
-            "post": 4,
-            "author": 1,
-            "content": "woooop.",
+            "content": "level u papi",
             "created_on": "2021-08-16"
         }
     }
