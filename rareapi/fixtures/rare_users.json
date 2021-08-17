@@ -1,6 +1,6 @@
 [
     {
-        "model": "rareapi.rare_users",
+        "model": "rareapi.rareusers",
         "pk": 1,
         "fields": {
             "user": 1,

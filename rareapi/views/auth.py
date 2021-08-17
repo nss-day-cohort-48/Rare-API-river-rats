@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
-from rareapi.models import RareUser, rare_users
+from rareapi.models import RareUser
 
 
 @csrf_exempt
@@ -48,7 +48,7 @@ def register_user(request):
 
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
-    new_user = RareUser.objects.create_user(
+    new_user = User.objects.create_user(
         username=req_body['username'],
         email=req_body['email'],
         password=req_body['password'],

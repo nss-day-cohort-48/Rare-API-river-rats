@@ -20,7 +20,7 @@
             "first_name": "Nick",
             "last_name": "M",
             "email": "nick@m.com",
-            "username": "Nick M",
+            "username": "nick@m.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "is_staff": true
         }
@@ -32,8 +32,8 @@
             
             "first_name": "Ben",
             "last_name": "K",
-            "email": "nick@me.com",
-            "username": "Ben K",
+            "email": "ben@me.com",
+            "username": "ben@me.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "is_staff": true
         }
@@ -46,7 +46,7 @@
             "first_name": "Roger",
             "last_name": "G",
             "email": "roger@g.com",
-            "username": "Roger G",
+            "username": "roger@g.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "is_staff": true
         }
@@ -58,7 +58,7 @@
             "first_name": "Key",
             "last_name": "N",
             "email": "key@n.com",
-            "username": "Key N",
+            "username": "key@n.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "is_staff": true
             
