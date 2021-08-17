@@ -11,7 +11,6 @@ from rareapi.models import Category
 from rareapi.models import RareUser
 
 
-
 class PostUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
