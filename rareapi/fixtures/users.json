@@ -9,7 +9,10 @@
             "email": "me@me.com",
             "username": "me@me.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": true
+            "is_staff": true,
+            "profile_image_url": "profile_image_url",
+            "created_on": "2020-08-28",
+            "is_active": true
         }
     },
     {
@@ -22,7 +25,10 @@
             "email": "nick@m.com",
             "username": "nick@m.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": true
+            "is_staff": true,
+            "profile_image_url": "profile_image_url",
+            "created_on": "2020-08-28",
+            "is_active": true
         }
     },
     {
@@ -35,7 +41,10 @@
             "email": "ben@me.com",
             "username": "ben@me.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": true
+            "is_staff": true,
+            "profile_image_url": "profile_image_url",
+            "created_on": "2020-08-28",
+            "is_active": true
         }
     },
     {
@@ -48,7 +57,10 @@
             "email": "roger@g.com",
             "username": "roger@g.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": true
+            "is_staff": true,
+            "profile_image_url": "profile_image_url",
+            "created_on": "2020-08-28",
+            "is_active": true
         }
     },
     {
@@ -60,7 +72,10 @@
             "email": "key@n.com",
             "username": "key@n.com",
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "is_staff": true
+            "is_staff": true,
+            "profile_image_url": "profile_image_url",
+            "created_on": "2020-08-28",
+            "is_active": true
             
         }
     }
