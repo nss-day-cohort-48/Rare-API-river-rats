@@ -25,7 +25,7 @@ class PostCategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     rare_user = PostUserSerializer(many=False)
-    category_id = PostCategorySerializer(many=True)
+    category_id = PostCategorySerializer(many=False)
 
     class Meta:
         model = Post
@@ -41,7 +41,7 @@ class PostView(ViewSet):
         rare_user = RareUser.objects.get(user=request.auth.user)
 
         post = Post()
-        post.category_id = Category.objects.get(pk=request.data["category"])
+        post.category_id = Category.objects.get(pk=request.data["category_id"])
         post.title = request.data["title"]
         post.publication_date = request.data["publication_date"]
         post.image_url = request.data["image_url"]
@@ -102,24 +102,34 @@ class PostView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def list(self, request):
-        """Handle GET requests to events resource
+        """Handle GET requests to posts resource
 
         Returns:
-            Response -- JSON serialized list of events
+            Response -- JSON serialized list of posts
         """
         # Get the current authenticated user
         rare_user = RareUser.objects.get(user=request.auth.user)
-        posts = Post.objects.all()
+        if rare_user is not None:
+            posts = Post.objects.filter(rare_user=rare_user)
 
-        for post in posts:
-
-            post.joined = category_id in post.category_id.all()
-
-        # Support filtering posts by category
-        category = self.request.query_params.get('category_id', None)
-        if category is not None:
-            posts = posts.filter(category=type)
+        else:
+            posts = Post.objects.all()
 
         serializer = PostSerializer(
-            posts, many=True, context={'request': request})
+            posts, many=True, context={'request': request}
+        )
         return Response(serializer.data)
+        # posts = Post.objects.all()
+
+        # for post in posts:
+
+        #     post.joined = category_id in post.category_id.all()
+
+        # # Support filtering posts by category
+        # category = self.request.query_params.get('category_id', None)
+        # if category is not None:
+        #     posts = posts.filter(category=type)
+
+        # serializer = PostSerializer(
+        #     posts, many=True, context={'request': request})
+        # return Response(serializer.data)
