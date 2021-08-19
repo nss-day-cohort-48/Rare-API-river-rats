@@ -41,6 +41,7 @@ class PostView(ViewSet):
         rare_user = RareUser.objects.get(user=request.auth.user)
 
         post = Post()
+        post.rare_user = rare_user
         post.category_id = Category.objects.get(pk=request.data["category_id"])
         post.title = request.data["title"]
         post.publication_date = request.data["publication_date"]
@@ -74,6 +75,7 @@ class PostView(ViewSet):
         rare_user = RareUser.objects.get(user=request.auth.user)
 
         post = Post()
+        post.rare_user = rare_user
         post.category_id = Category.objects.get(pk=request.data["category"])
         post.title = request.data["title"]
         post.publication_date = request.data["publication_date"]
