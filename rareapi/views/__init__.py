@@ -3,3 +3,4 @@ from .posts import PostView, Post
 from .comment import CommentView, Comment
 from .category import CategoryView, Category
 from .tag import TagView, TagSerializer
+from .profile import Profile
