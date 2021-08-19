@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rareapi.models import RareUser
 
-
 class Profile(ViewSet):
     """Rare Rare_users"""
 
