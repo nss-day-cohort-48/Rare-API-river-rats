@@ -5,8 +5,7 @@
     "fields": {
       "user": 1,
       "bio": "Me",
-      "profile_image_url": "profile_image_url",
-      "created_on": "2021-08-17"
+      "profile_image_url": "profile_image_url"
     }
   }
 ]

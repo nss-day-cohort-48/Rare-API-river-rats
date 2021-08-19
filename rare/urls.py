@@ -15,15 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include
-from rareapi.views import PostView, CommentView
 from django.urls import path
 from rest_framework import routers
-from rareapi.views import register_user, login_user
-from rareapi.views import (
-    PostView,
-    CategoryView,
-    TagView,
-)
+from rareapi.views import register_user, login_user, PostView, CategoryView, TagView, CommentView, Profile
 
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -31,6 +25,7 @@ router.register(r'posts', PostView, 'post')
 router.register(r'comments', CommentView, 'comment')
 router.register(r'categories', CategoryView, 'category')
 router.register(r'tags', TagView, 'tag')
+router.register(r'profile', Profile, 'profile')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
